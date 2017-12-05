@@ -12,6 +12,12 @@ mongod
 # run Mongo DB client
 mongo
 
+# show databases
+show dbs
+
+# show collections (tables) in current database
+show collections
+
 # show all rows in table (table name is class name in lowercase)
 db.TABLENAME.find()
 ```
