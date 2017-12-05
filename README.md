@@ -2,6 +2,8 @@
 
 Requires MongoDB and Java 1.8
 
+## Installation
+
 ``` bash
 # install Mongo DB on Mac
 brew install mongodb
@@ -23,3 +25,10 @@ db.TABLENAME.find()
 ```
 
 The default database when starting the client is test. This is also the default database used by Spring.
+
+## Development
+The service project must run on a different port than the frontend project
+```
+# application.properties
+server.port = 8081
+```
