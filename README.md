@@ -29,6 +29,6 @@ The default database when starting the client is test. This is also the default 
 ## Development
 The service project must run on a different port than the frontend project. This is already setup in this project.
 ```
-# application.properties
+# src/main/resources/application.properties
 server.port = 8081
 ```
