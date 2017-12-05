@@ -27,7 +27,7 @@ db.TABLENAME.find()
 The default database when starting the client is test. This is also the default database used by Spring.
 
 ## Development
-The service project must run on a different port than the frontend project
+The service project must run on a different port than the frontend project. This is already setup in this project.
 ```
 # application.properties
 server.port = 8081
