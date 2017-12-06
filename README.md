@@ -28,7 +28,17 @@ The default database when starting the client is test. This is also the default 
 
 ## Development
 The service project must run on a different port than the frontend project. This is already setup in this project.
+
 ```
+# create IntelliJ project
+- download project from github
+- File -> New .> Project from existing sources. Choose project folder. (select "Auto Update" otherwise the defaults)
+
 # src/main/resources/application.properties
 server.port = 8081
+
+# run application in IntelliJ
+Run -> Run 'DemoServiceApplication'
 ```
+
+
