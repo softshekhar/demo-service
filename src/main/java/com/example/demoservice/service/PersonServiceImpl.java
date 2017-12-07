@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class PersonServiceImpl implements PersonService {
+@Service public class PersonServiceImpl implements PersonService {
 
 	private PersonDB personDB;
 
@@ -25,5 +24,13 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override public List<Person> getPeople() {
 		return personDB.findAll();
+	}
+
+	@Override public Person updatePerson(Person person) {
+		return personDB.save(person);
+	}
+
+	@Override public void deletePerson(Person person) {
+		personDB.delete(person);
 	}
 }

@@ -1,15 +1,20 @@
 package com.example.demoservice.domain;
 
-public class Person {
-	private String id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document public class Person {
+
+	@Id private String id;
 	private String name;
+
+	public Person() {
+
+	}
 
 	public Person(String id, String name) {
 		this.id = id;
 		this.name = name;
-	}
-
-	public Person() {
 	}
 
 	public String getId() {

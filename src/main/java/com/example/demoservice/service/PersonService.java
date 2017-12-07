@@ -10,4 +10,8 @@ public interface PersonService {
 	Person addPerson(Person person);
 
 	List<Person> getPeople();
+
+	void deletePerson(Person person);
+
+	Person updatePerson(Person person);
 }

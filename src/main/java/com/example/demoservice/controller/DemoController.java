@@ -6,25 +6,33 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController public class DemoController {
+@RestController @CrossOrigin public class DemoController {
 
 	private PersonService personService;
 
-	// from Spring 4.3 onwards we do not need autowire for single constructor based injection.
+	// from Spring 4.3 onwards we do not need autowire if there is only constructor.
 	// Refer : https://spring.io/blog/2016/03/04/core-container-refinements-in-spring-framework-4-3
 	public DemoController(PersonService personService) {
 		this.personService = personService;
 	}
 
-	@GetMapping("hello") @CrossOrigin public String hello() {
+	@GetMapping("hello") public String hello() {
 		return personService.hello();
 	}
 
-	@PostMapping("addperson") @CrossOrigin public Person addPerson(@RequestBody Person person) {
+	@PostMapping("people") public Person addPerson(@RequestBody Person person) {
 		return personService.addPerson(person);
 	}
 
-	@GetMapping("people") @CrossOrigin List<Person> getPeople() {
+	@GetMapping("people") public List<Person> getPeople() {
 		return personService.getPeople();
+	}
+
+	@PutMapping public Person updatePerson(@RequestBody Person person) {
+		return personService.updatePerson(person);
+	}
+
+	@DeleteMapping("people") public void deletePerson(@RequestBody Person person) {
+		personService.deletePerson(person);
 	}
 }
